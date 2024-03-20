@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Control Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <script  src="./slider.js"></script>
+    <script  src="./checkbox.js"></script>
+    <script  src="./button.js"></script>
+
+</head>
+<body>
+<div class="control-panel">
+    <div class="checkbox-row">
+        <div class="checkbox-control">
+            <label>1</label>
+            <input type="checkbox" id="checkbox-1" value="1">
+            <label for="checkbox-1">R</label>
+        </div>
+        <div class="checkbox-control">
+            <label>2</label>
+            <input type="checkbox" id="checkbox-2" value="2">
+            <label for="checkbox-2">G</label>
+        </div>
+        <div class="checkbox-control">
+            <label>3</label>
+            <input type="checkbox" id="checkbox-3" value="3" checked>
+            <label for="checkbox-3">B</label>
+        </div>
+        <div class="checkbox-control">
+            <label>4</label>
+            <input type="checkbox" id="checkbox-4" value="4">
+            <label for="checkbox-4">W</label>
+        </div>
+    </div>
+    <div class="control">
+        <span class="label">Play/Pause</span>
+        <button id="play-pause"></button>
+        <div class="slider-container">
+            <span class="min-value">10</span>
+            <input type="range" min="10" max="1500" value="755" class="slider" id="play-pause-slider">
+            <span class="max-value">1500</span>
+        </div>
+    </div>
+    <div class="control">
+        <span class="label">Next</span>
+        <button id="next"></button>
+        <div class="slider-container">
+            <span class="min-value">10</span>
+            <input type="range" min="10" max="1500" value="755" class="slider" id="next-slider">
+            <span class="max-value">1500</span>
+        </div>
+    </div>
+    <div class="control">
+        <span class="label">Vol -</span>
+        <button id="vol-minus"></button>
+        <div class="slider-container">
+            <span class="min-value">10</span>
+            <input type="range" min="10" max="1500" value="755" class="slider" id="vol-minus-slider">
+            <span class="max-value">1500</span>
+        </div>
+    </div>
+    <div class="control">
+        <span class="label">Vol +</span>
+        <button id="vol-plus"></button>
+        <div class="slider-container">
+            <span class="min-value">10</span>
+            <input type="range" min="10" max="1500" value="755" class="slider" id="vol-plus-slider">
+            <span class="max-value">1500</span>
+        </div>
+    </div>
+    <div class="control">
+        <span class="label">Prev</span>
+        <button id="prev"></button>
+        <div class="slider-container">
+            <span class="min-value">10</span>
+            <input type="range" min="10" max="1500" value="755" class="slider" id="prev-slider">
+            <span class="max-value">1500</span>
+        </div>
+    </div>
+    <div class="control">
+        <span class="label">Pause</span>
+        <button id="pause"></button>
+        <div class="slider-container">
+            <span class="min-value">10</span>
+            <input type="range" min="10" max="1500" value="755" class="slider" id="pause-slider">
+            <span class="max-value">1500</span>
+        </div>
+    </div>
+    <div class="control">
+        <span class="label">Reset</span>
+        <button id="reset"></button>
+        <div class="slider-container">
+            <span class="min-value">10</span>
+            <input type="range" min="10" max="1500" value="755" class="slider" id="reset-slider">
+            <span class="max-value">1500</span>
+        </div>
+    </div>
+    <div class="control">
+        <span class="label">LED</span>
+        <button id="led"></button>
+        <div class="slider-container">
+            <span class="min-value">0</span>
+            <input type="range" min="0" max="255" value="100" class="slider" id="led-slider">
+            <span class="max-value">255</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
