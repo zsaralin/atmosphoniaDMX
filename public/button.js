@@ -49,7 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 body: JSON.stringify(dataToSend),
             })
                 .then(response => response.text())
-                .then(data => console.log(data))
+                .then(data => {
+                    console.log(data); // Add this console.log statement
+                })
                 .catch(error => console.error('Error:', error));
         });
     });

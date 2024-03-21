@@ -49,7 +49,9 @@ button {
     width: 100%; /* Ensure the slider fills the container */
     cursor: pointer;
 }
-
+.slider-value {
+    margin-left: 50px; /* Set a fixed width for the input */
+}
 .checkbox-row {
     display: flex;
     justify-content: center; /* Aligns items to the center, making them closer together */
@@ -65,4 +67,19 @@ button {
 
 .checkbox-control input[type="checkbox"] {
     margin: 5px 0; /* Space between the top label and checkbox, and checkbox and bottom label */
+}
+
+/* Style for the Save button */
+#save-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center; /* Center the text */
+}
+
+#save-button:hover {
+    background-color: #0056b3;
 }

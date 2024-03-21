@@ -7,10 +7,13 @@
     <script  src="./slider.js"></script>
     <script  src="./checkbox.js"></script>
     <script  src="./button.js"></script>
-
+    <script  src="./saveButton.js"></script>
 </head>
 <body>
 <div class="control-panel">
+    <div class="control">
+        <button id="save-button">Save</button>
+    </div>
     <div class="checkbox-row">
         <div class="checkbox-control">
             <label>1</label>
@@ -37,74 +40,82 @@
         <span class="label">Play/Pause</span>
         <button id="play-pause"></button>
         <div class="slider-container">
-            <span class="min-value">10</span>
-            <input type="range" min="10" max="1500" value="755" class="slider" id="play-pause-slider">
-            <span class="max-value">1500</span>
+            <span class="min-value">44</span>
+            <input type="range" min="44" max="175" value="109" class="slider" id="play-pause-slider">
+            <span class="max-value">175</span>
+            <input type="number" min="44" max="175" value="109" class="slider-value" id="play-pause-slider-value">
         </div>
     </div>
     <div class="control">
         <span class="label">Next</span>
         <button id="next"></button>
         <div class="slider-container">
-            <span class="min-value">10</span>
-            <input type="range" min="10" max="1500" value="755" class="slider" id="next-slider">
-            <span class="max-value">1500</span>
+            <span class="min-value">176</span>
+            <input type="range" min="176" max="263" value="220" class="slider" id="next-slider">
+            <span class="max-value">263</span>
+            <input type="number" min="176" max="263" value="220" class="slider-value" id="next-slider-value">
         </div>
     </div>
     <div class="control">
         <span class="label">Vol -</span>
         <button id="vol-minus"></button>
         <div class="slider-container">
-            <span class="min-value">10</span>
-            <input type="range" min="10" max="1500" value="755" class="slider" id="vol-minus-slider">
-            <span class="max-value">1500</span>
+            <span class="min-value">264</span>
+            <input type="range" min="264" max="351" value="308" class="slider" id="vol-minus-slider">
+            <span class="max-value">351</span>
+            <input type="number" min="264" max="351" value="308" class="slider-value" id="vol-minus-slider-value">
         </div>
     </div>
     <div class="control">
         <span class="label">Vol +</span>
         <button id="vol-plus"></button>
         <div class="slider-container">
-            <span class="min-value">10</span>
-            <input type="range" min="10" max="1500" value="755" class="slider" id="vol-plus-slider">
-            <span class="max-value">1500</span>
-        </div>
-    </div>
-    <div class="control">
-        <span class="label">Prev</span>
-        <button id="prev"></button>
-        <div class="slider-container">
-            <span class="min-value">10</span>
-            <input type="range" min="10" max="1500" value="755" class="slider" id="prev-slider">
-            <span class="max-value">1500</span>
+            <span class="min-value">352</span>
+            <input type="range" min="352" max="439" value="396" class="slider" id="vol-plus-slider">
+            <span class="max-value">438</span>
+            <input type="number" min="352" max="439" value="396" class="slider-value" id="vol-plus-slider-value">
         </div>
     </div>
     <div class="control">
         <span class="label">Pause</span>
         <button id="pause"></button>
         <div class="slider-container">
-            <span class="min-value">10</span>
-            <input type="range" min="10" max="1500" value="755" class="slider" id="pause-slider">
-            <span class="max-value">1500</span>
+            <span class="min-value">440</span>
+            <input type="range" min="440" max="527" value="484" class="slider" id="pause-slider">
+            <span class="max-value">528</span>
+            <input type="number" min="440" max="527" value="484" class="slider-value" id="pause-slider-value">
+        </div>
+    </div>
+    <div class="control">
+        <span class="label">Prev</span>
+        <button id="prev"></button>
+        <div class="slider-container">
+            <span class="min-value">528</span>
+            <input type="range" min="528" max="615" value="572" class="slider" id="prev-slider">
+            <span class="max-value">616</span>
+            <input type="number" min="528" max="615" value="572" class="slider-value" id="prev-slider-value">
         </div>
     </div>
     <div class="control">
         <span class="label">Reset</span>
         <button id="reset"></button>
         <div class="slider-container">
-            <span class="min-value">10</span>
-            <input type="range" min="10" max="1500" value="755" class="slider" id="reset-slider">
-            <span class="max-value">1500</span>
+            <span class="min-value">616</span>
+            <input type="range" min="616" max="703" value="660" class="slider" id="reset-slider">
+            <span class="max-value">703</span>
+            <input type="number" min="616" max="703" value="660" class="slider-value" id="reset-slider-value">
         </div>
     </div>
     <div class="control">
         <span class="label">LED</span>
-        <button id="led"></button>
-        <div class="slider-container">
+        <div class="slider-container" style="margin-left:80px">
             <span class="min-value">0</span>
-            <input type="range" min="0" max="255" value="100" class="slider" id="led-slider">
+            <input type="range" min="0" max="255" value="128" class="slider" id="led-slider">
             <span class="max-value">255</span>
+            <input type="number" min="0" max="255" value="128" class="slider-value" id="led-slider-value">
         </div>
     </div>
 </div>
+
 </body>
 </html>

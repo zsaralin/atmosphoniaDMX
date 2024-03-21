@@ -14,27 +14,73 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update position of the current value label
         displayElement.style.left = `calc(${percentage}% - 0px)`; // Adjust based on thumb size and label width
     };
+    fetch('http://localhost:3000/get-config')
+            .then(response => response.json())
+            .then(config => {
+                console.log(config)
+                // Update slider values based on config
+                sliders.forEach((slider, index) => {
+                    slider.value = config[`slider${index + 1}`]; // Adjust the property name as per your JSON structure
+                    sliderValues[index].value = config[`slider${index + 1}`]; // Adjust the property name as per your JSON structure
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching config:', error);
+            });
 
     // Select all slider elements
     const sliders = document.querySelectorAll('.slider');
+    const sliderValues = document.querySelectorAll('.slider-value');
 
-    sliders.forEach(slider => {
-        const sliderId = slider.id; // Get current slider's ID
-        const currentValueId = sliderId + '-value'; // Construct ID for current value display
+    sliders.forEach((slider, index) => {
+        const sliderValueInput = sliderValues[index];
+        // Update slider value when input value changes
+        sliderValueInput.addEventListener('input', function() {
+            slider.value = this.value;
+        });
 
-        // Create or select the current value display element
-        let currentValueDisplay = document.getElementById(currentValueId);
-        if (!currentValueDisplay) {
-            currentValueDisplay = document.createElement('span');
-            currentValueDisplay.id = currentValueId;
-            currentValueDisplay.className = 'current-value';
-            slider.parentNode.insertBefore(currentValueDisplay, slider.nextSibling);
+        // Update input value when slider value changes
+        slider.addEventListener('input', function() {
+            sliderValueInput.value = this.value;
+        });
+    });
+
+    const ledSlider = document.getElementById('led-slider');
+
+    // Add an event listener to the slider input element
+    ledSlider.addEventListener('input', function() {
+        // Get the current value of the slider
+        const sliderValue = this.value;
+        const buttonLabel ='led'; // Using button ID as the label
+
+        // Find selected checkbox value
+        let checkboxValue;
+        const selectedCheckbox = document.querySelector('.checkbox-row input[type="checkbox"]:checked');
+        if (selectedCheckbox) {
+            checkboxValue = selectedCheckbox.value; // Get the value of the checked checkbox
+        } else {
+            checkboxValue = 'None selected';
         }
 
-        // Initial update for each slider
-        updateSliderValueDisplay(slider, currentValueDisplay);
+        // Prepare data to be sent
+        const dataToSend = {
+            buttonLabel,
+            sliderValue,
+            checkboxValue
+        };
 
-        // Update on slider change
-        slider.addEventListener('input', () => updateSliderValueDisplay(slider, currentValueDisplay));
+        // Sending data to backend
+        fetch('http://localhost:3000/process-data', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(dataToSend),
+        })
+            .then(response => response.text())
+            .then(data => {
+                console.log(data); // Add this console.log statement
+            })
+            .catch(error => console.error('Error:', error));
     });
 });
