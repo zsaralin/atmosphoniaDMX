@@ -11,3 +11,6 @@ The browser will automatically open a website. Please wait for about a minute. I
 You will see a web page with buttons and sliders.
 
 To save the settings for next time, click the "Save" button.
+
+Note: if using artnet instead of usb enttec, change line 21 in main.js to: 
+**const universe = dmx.addUniverse('demo', 'artnet', '192.168.1.100', { universe: 0 }). Make sure to use the appropriate ip address. **
