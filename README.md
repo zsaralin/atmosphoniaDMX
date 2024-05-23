@@ -1,16 +1,33 @@
-Plug the USB Enttec into the Raspberry Pi.
+### Installation and Setup
 
-Open the Terminal application.
+2. **Open Terminal**:
+    - Open the Terminal application
 
-Navigate to dmx folder.
+3. **Navigate to the Project Directory**:
+    - Change directory to your project folder:
+      ```bash
+      cd path/to/dmx
+      ```
 
-Type node main.js and press Enter.
+4. **Start the Application**:
+    - Run the application by typing the following command and pressing Enter:
+      ```bash
+      node main.js
+      ```
 
-The browser will automatically open a website. Please wait for about a minute. If it doesn't open, type http://localhost:3000 into your browser's address bar.
+5. **Access the Web Interface**:
+    - The browser should automatically open the web interface at `http://localhost:3000`. If it doesn't open automatically, manually type the URL into your browser's address bar.
 
-You will see a web page with buttons and sliders.
+6. **Using the Web Interface**:
+    - You will see a web page with buttons and sliders.
+    - To save the settings for the next time, click the **"Save"** button.
 
-To save the settings for next time, click the "Save" button.
+### Configuring for Art-Net
 
-Note: if using artnet instead of usb enttec, change line 21 in main.js to: 
-**const universe = dmx.addUniverse('demo', 'artnet', '192.168.1.100', { universe: 0 }). Make sure to use the appropriate ip address. **
+If you are using Art-Net instead of a USB Enttec:
+
+- Modify `line 21` in `main.js` to use the appropriate IP address for your Art-Net device:
+  ```javascript
+  const universe = dmx.addUniverse('demo', 'artnet', '192.168.1.100', { universe: 0 });
+
+- Replace 192.168.1.100 with the IP address of your Art-Net device.
